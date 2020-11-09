@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "jp.aoichaan0513"
-version = "1.0.0"
+version = "1.0.1"
 
 repositories {
     mavenCentral()
@@ -16,6 +16,6 @@ dependencies {
     implementation(files("libs/Kotlin_Utils-1.0.0.jar"))
 }
 
-tasks.withType<KotlinCompile>() {
+tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
 }

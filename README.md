@@ -1,5 +1,5 @@
-# ActionbarBuilder
-Build Actionbar library for Minecraft.
+# ActionBarBuilder
+Build ActionBar library for Minecraft.
 
 ## ヒント
 [ブランチの分け方](https://qiita.com/hatt0519/items/23ef0866f4abacce7296)<br>

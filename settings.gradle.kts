@@ -1,3 +1,1 @@
-
-rootProject.name = "ActionbarBuilder"
-
+rootProject.name = "ActionBarBuilder"
