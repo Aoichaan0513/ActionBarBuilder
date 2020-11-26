@@ -1,5 +1,6 @@
 <component name="ProjectCodeStyleConfiguration">
   <code_scheme name="Project" version="173">
+    <option name="LINE_SEPARATOR" value="&#10;" />
     <JetCodeStyleSettings>
       <option name="PACKAGES_TO_USE_STAR_IMPORTS">
         <value>
@@ -17,10 +18,10 @@
           <package name="" alias="true" withSubpackages="true" />
         </value>
       </option>
-      <option name="CODE_STYLE_DEFAULTS" value="KOTLIN_OFFICIAL" />
+      <option name="CODE_STYLE_DEFAULTS" value="KOTLIN_OLD_DEFAULTS" />
     </JetCodeStyleSettings>
     <codeStyleSettings language="kotlin">
-      <option name="CODE_STYLE_DEFAULTS" value="KOTLIN_OFFICIAL" />
+      <option name="CODE_STYLE_DEFAULTS" value="KOTLIN_OLD_DEFAULTS" />
     </codeStyleSettings>
   </code_scheme>
 </component>
