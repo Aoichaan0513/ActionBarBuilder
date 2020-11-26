@@ -15,7 +15,7 @@ repositories {
 }
 
 dependencies {
-    implementation(kotlin("stdlib"))
+    api(kotlin("stdlib"))
     api("jp.aoichaan0513", "Kotlin_Utils", "1.1.0")
 }
 
