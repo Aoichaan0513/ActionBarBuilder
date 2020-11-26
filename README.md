@@ -9,7 +9,7 @@ repositories {
 }
 
 dependencies {
-    compile group: 'jp.aoichaan0513', name: 'ActionBarBuilder', version: '1.1.0'
+    compile group: 'jp.aoichaan0513', name: 'ActionBarBuilder', version: '1.1.1'
 }
 ```
 
@@ -20,7 +20,7 @@ repositories {
 }
 
 dependencies {
-    api("jp.aoichaan0513", "ActionBarBuilder", "1.1.0")
+    api("jp.aoichaan0513", "ActionBarBuilder", "1.1.1")
 }
 ```
 
