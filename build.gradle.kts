@@ -1,21 +1,49 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.4.10"
+    kotlin("jvm") version "1.4.20"
+    maven
 }
 
-group = "jp.aoichaan0513"
-version = "1.0.1"
+val groupId = "jp.aoichaan0513"
+group = groupId
+version = "1.1.0"
 
 repositories {
     mavenCentral()
+    maven("https://repository.aoichaan0513.jp")
 }
 
 dependencies {
     implementation(kotlin("stdlib"))
-    implementation(files("libs/Kotlin_Utils-1.0.0.jar"))
+    api("jp.aoichaan0513", "Kotlin_Utils", "1.1.0")
 }
 
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
+}
+
+val repo = File(rootDir, "repository")
+tasks {
+    "uploadArchives"(Upload::class) {
+        repositories {
+            withConvention(MavenRepositoryHandlerConvention::class) {
+                mavenDeployer {
+                    withGroovyBuilder {
+                        "repository"("url" to uri("file://${repo.absolutePath}"))
+                    }
+
+                    pom.project {
+                        withGroovyBuilder {
+                            "parent" {
+                                "groupId"(groupId)
+                                "artifactId"(rootProject.name)
+                                "version"(version)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
