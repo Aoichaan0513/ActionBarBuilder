@@ -19,8 +19,11 @@ class ActionBarBuilder {
         list = CopyOnWriteArrayList(collection.filter { it.isNotBlank() }.toMutableList())
     }
 
-    constructor(defaultSeparator: String = " / ", iterable: Iterable<String>) : this(defaultSeparator, iterable.filter { it.isNotBlank() })
-    constructor(defaultSeparator: String = " / ", array: Array<out String>) : this(defaultSeparator, array.filter { it.isNotBlank() })
+    constructor(defaultSeparator: String = " / ", iterable: Iterable<String>) :
+            this(defaultSeparator, iterable.filter { it.isNotBlank() })
+
+    constructor(defaultSeparator: String = " / ", array: Array<out String>) :
+            this(defaultSeparator, array.filter { it.isNotBlank() })
 
     fun separator(separator: String): ActionBarBuilder {
         defaultSeparator = separator
