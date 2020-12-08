@@ -7,7 +7,7 @@ plugins {
 
 val groupId = "jp.aoichaan0513"
 group = groupId
-version = "1.1.1"
+version = "1.1.2"
 
 repositories {
     mavenCentral()
@@ -16,7 +16,7 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib"))
-    implementation("jp.aoichaan0513", "Kotlin_Utils", "1.1.2")
+    implementation("jp.aoichaan0513", "Kotlin_Utils", "1.1.4")
 }
 
 tasks.withType<KotlinCompile> {
@@ -24,24 +24,19 @@ tasks.withType<KotlinCompile> {
 }
 
 val repo = File(rootDir, "repository")
-tasks {
-    "uploadArchives"(Upload::class) {
-        repositories {
-            withConvention(MavenRepositoryHandlerConvention::class) {
-                mavenDeployer {
-                    withGroovyBuilder {
-                        "repository"("url" to uri("file://${repo.absolutePath}"))
-                    }
+val uploadArchives: Upload by tasks
+uploadArchives.repositories.withConvention(MavenRepositoryHandlerConvention::class) {
+    mavenDeployer {
+        withGroovyBuilder {
+            "repository"("url" to uri("file://${repo.absolutePath}"))
+        }
 
-                    pom.project {
-                        withGroovyBuilder {
-                            "parent" {
-                                "groupId"(groupId)
-                                "artifactId"(rootProject.name)
-                                "version"(version)
-                            }
-                        }
-                    }
+        pom.project {
+            withGroovyBuilder {
+                "parent" {
+                    "groupId"(groupId)
+                    "artifactId"(rootProject.name)
+                    "version"(version)
                 }
             }
         }
