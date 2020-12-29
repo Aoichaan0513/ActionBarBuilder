@@ -9,8 +9,8 @@ repositories {
 }
 
 dependencies {
-    // implementation group: 'jp.aoichaan0513:ActionBarBuilder:1.1.3'
-    implementation group: 'jp.aoichaan0513', name: 'ActionBarBuilder', version: '1.1.3'
+    // implementation group: 'jp.aoichaan0513:ActionBarBuilder:1.1.4'
+    implementation group: 'jp.aoichaan0513', name: 'ActionBarBuilder', version: '1.1.4'
 }
 ```
 
@@ -22,8 +22,8 @@ repositories {
 }
 
 dependencies {
-    // implementation("jp.aoichaan0513:ActionBarBuilder:1.1.3")
-    implementation("jp.aoichaan0513", "ActionBarBuilder", "1.1.3")
+    // implementation("jp.aoichaan0513:ActionBarBuilder:1.1.4")
+    implementation("jp.aoichaan0513", "ActionBarBuilder", "1.1.4")
 }
 ```
 
