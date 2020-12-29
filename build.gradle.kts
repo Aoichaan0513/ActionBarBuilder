@@ -1,13 +1,13 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.4.20"
+    kotlin("jvm") version "1.4.21"
     maven
 }
 
 val groupId = "jp.aoichaan0513"
 group = groupId
-version = "1.1.2"
+version = "1.1.3"
 
 repositories {
     mavenCentral()
@@ -16,7 +16,7 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib"))
-    implementation("jp.aoichaan0513", "Kotlin_Utils", "1.1.4")
+    implementation("jp.aoichaan0513", "Kotlin_Utils", "1.1.5")
 }
 
 tasks.withType<KotlinCompile> {
