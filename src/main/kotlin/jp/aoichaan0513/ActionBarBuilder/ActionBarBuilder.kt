@@ -1,7 +1,6 @@
 package jp.aoichaan0513.ActionBarBuilder
 
-import jp.aoichaan0513.Kotlin_Utils.getValue
-import jp.aoichaan0513.Kotlin_Utils.toString
+import jp.aoichaan0513.Kotlin_Utils.joinToString
 import java.util.concurrent.CopyOnWriteArrayList
 
 class ActionBarBuilder {
@@ -85,6 +84,6 @@ class ActionBarBuilder {
 
     fun build(separator: String = defaultSeparator): String {
         val l = list.filter { it.isNotBlank() }
-        return l.isNotEmpty().getValue(l.toString({ it }, "", separator).trim(), "")
+        return if (l.isNotEmpty()) l.joinToString("", separator) { it }.trim() else ""
     }
 }
