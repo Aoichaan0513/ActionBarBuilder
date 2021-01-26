@@ -5,9 +5,8 @@ plugins {
     maven
 }
 
-val groupId = "jp.aoichaan0513"
-group = groupId
-version = "1.1.5"
+group = "jp.aoichaan0513"
+version = "1.1.6"
 
 repositories {
     mavenCentral()
@@ -16,7 +15,7 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib"))
-    implementation("jp.aoichaan0513", "Kotlin_Utils", "1.1.8")
+    implementation("jp.aoichaan0513", "Kotlin_Utils", "1.1.9")
 }
 
 java {
@@ -24,9 +23,8 @@ java {
     withJavadocJar()
 }
 
-tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
-}
+val compileKotlin: KotlinCompile by tasks
+compileKotlin.kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8.toString()
 
 val repo = File(rootDir, "repository")
 val uploadArchives: Upload by tasks
@@ -39,7 +37,7 @@ uploadArchives.repositories.withConvention(MavenRepositoryHandlerConvention::cla
         pom.project {
             withGroovyBuilder {
                 "parent" {
-                    "groupId"(groupId)
+                    "groupId"(group)
                     "artifactId"(rootProject.name)
                     "version"(version)
                 }

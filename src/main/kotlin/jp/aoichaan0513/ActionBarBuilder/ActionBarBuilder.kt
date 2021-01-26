@@ -35,13 +35,13 @@ class ActionBarBuilder {
     }
 
     fun add(str: String): ActionBarBuilder {
-        if (str.isBlank())
+        if (str.isNotBlank())
             list.add(str)
         return this
     }
 
     fun add(i: Int, str: String): ActionBarBuilder {
-        if (str.isBlank())
+        if (str.isNotBlank())
             list.add(i, str)
         return this
     }
@@ -56,21 +56,13 @@ class ActionBarBuilder {
         return this
     }
 
-    fun addAll(iterable: Iterable<String>): ActionBarBuilder {
-        return addAll(iterable.filter { it.isNotBlank() })
-    }
+    fun addAll(iterable: Iterable<String>) = addAll(iterable.filter { it.isNotBlank() })
 
-    fun addAll(i: Int, iterable: Iterable<String>): ActionBarBuilder {
-        return addAll(i, iterable.filter { it.isNotBlank() })
-    }
+    fun addAll(i: Int, iterable: Iterable<String>) = addAll(i, iterable.filter { it.isNotBlank() })
 
-    fun addAll(array: Array<out String>): ActionBarBuilder {
-        return addAll(array.filter { it.isNotBlank() })
-    }
+    fun addAll(array: Array<out String>) = addAll(array.filter { it.isNotBlank() })
 
-    fun addAll(i: Int, array: Array<out String>): ActionBarBuilder {
-        return addAll(i, array.filter { it.isNotBlank() })
-    }
+    fun addAll(i: Int, array: Array<out String>) = addAll(i, array.filter { it.isNotBlank() })
 
     fun remove(str: String): ActionBarBuilder {
         list.remove(str)
