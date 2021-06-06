@@ -74,8 +74,6 @@ class ActionBarBuilder {
         return this
     }
 
-    fun build(separator: String = defaultSeparator): String {
-        val l = list.filter { it.isNotBlank() }
-        return if (l.isNotEmpty()) l.joinToString("", separator) { it }.trim() else ""
-    }
+    fun build(separator: String = defaultSeparator) =
+        list.filter { it.isNotBlank() }.joinToString("", separator) { it }.trim()
 }
