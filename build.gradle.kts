@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "jp.aoichaan0513"
-version = "1.1.7"
+version = "1.1.8"
 
 repositories {
     mavenCentral()
@@ -15,7 +15,7 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib"))
-    implementation("jp.aoichaan0513", "Kotlin_Utils", "1.2.0")
+    implementation("jp.aoichaan0513", "Kotlin_Utils", "1.2.1")
 }
 
 java {
